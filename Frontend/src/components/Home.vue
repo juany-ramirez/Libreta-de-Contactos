@@ -1,26 +1,29 @@
 <template>
 	<div class="container">
 		<br><br>
-		<a class="waves-effect waves-light btn modal-trigger btn-large" v-on:click="nuevoBook" href="#modal1" id="boton">
-			<i class="material-icons large left">account_circle</i>Crear nuevo contacto</a>
+		<a class="waves-effect center waves-light btn modal-trigger btn-large" v-on:click="nuevoBook" href="#modal1" id="boton">
+			<i class="large material-icons left">account_circle</i>Crear nuevo contacto</a>
   	<!-- Modal Structure -->
 	  <div id="modal1" class="modal">
 	    <div class="modal-content">
-	      <h4>Contacto</h4>
+	      <h1 class="grey darken-4 white-text">Contacto</h1>
 				<div class="row">
 		        <div class="input-field col s6">
-		          <input type="text" v-model="book.titulo" :disabled="loading"  id="Titulo">
+							<i class="material-icons prefix">account_circle</i>
+							<input type="text" v-model="book.titulo" :disabled="loading"  id="Titulo">
 		          <label for="Titulo">Nombre del contacto</label>
-		        </div>
+						</div>
 						<div class="input-field col s6">
-		          <input type="number" v-model="book.publicacion" :disabled="loading"  id="Publicación">
+							<i class="material-icons prefix">phone</i>
+							<input type="number" v-model="book.publicacion" :disabled="loading"  id="Publicación">
 		          <label for="Publicación">Teléfono</label>
-		        </div>
+						</div>
 						<div class="row">
 					    <form class="col s12">
 					      <div class="row">
 					        <div class="input-field col s12">
-					          <textarea v-model="book.descripcion" :disabled="loading"  id="descripcion" type="text"  class="materialize-textarea"></textarea>
+										<i class="material-icons prefix">email</i>
+										<textarea v-model="book.descripcion" :disabled="loading"  id="descripcion" type="text"  class="materialize-textarea"></textarea>
 					          <label for="descripcion">Correos electrónicos</label>
 					        </div>
 					      </div>
@@ -30,7 +33,8 @@
 					    <form class="col s12">
 					      <div class="row">
 					        <div class="input-field col s12">
-					          <textarea v-model="book.descripcion" :disabled="loading"  id="descripcion" type="text"  class="materialize-textarea"></textarea>
+										<i class="material-icons prefix">whatshot</i>
+										<textarea v-model="book.descripcion" :disabled="loading"  id="descripcion" type="text"  class="materialize-textarea"></textarea>
 					          <label for="descripcion">Redes Sociales</label>
 					        </div>
 					      </div>
@@ -38,15 +42,17 @@
 					  </div>
 						<h2> Nuevo Vinculo </h2>
 						<div class="input-field col s6">
-		          <input v-model="book.keywords" :disabled="loading" id="Keywords" type="text"  class="validate">
+							<i class="material-icons prefix">perm_contact_calendar</i>
+							<input v-model="book.keywords" :disabled="loading" id="Keywords" type="text"  class="validate">
 		          <label for="Keywords">Nombre</label>
 		        </div>
 						<div class="input-field col s6">
+							<i class="material-icons prefix">fingerprint</i>
 		          <input v-model="book.keywords" :disabled="loading" id="Keywords" type="text"  class="validate">
 		          <label for="Keywords">Vinculo</label>
 		        </div>
 		      </div>
-					<a class="waves-effect waves-light btn-large" v-on:click="llamadoFuncion" :disabled="loading" id="boton">
+					<a class="waves-effect waves-light btn-large center" v-on:click="llamadoFuncion" :disabled="loading" id="boton">
 						<i class="material-icons left" >check_circle</i> OK!
 					</a>
 	    </div>
@@ -58,12 +64,11 @@
 		<table class="table centered">
 			<thead>
 				<tr>
-					<th>Título</th>
-					<th>Género</th>
-					<th>Autor</th>
-					<th>Publicación</th>
-					<th>Editorial</th>
-					<th>Descripción</th>
+					<th>Nombre</th>
+					<th>Teléfono</th>
+					<th>Correo Electrónico</th>
+					<th>Redes Sociales</th>
+					<th>Vinculos con otros Contactos</th>
 					<th>Modificar</th>
 					<th>Borrar</th>
 				</tr>
@@ -75,7 +80,6 @@
 					<td>{{book.autor}}</td>
 					<td>{{book.publicacion}}</td>
 					<td>{{book.editorial}}</td>
-					<td>{{book.descripcion}}</td>
 					<td>
 						<a v-on:click="startToModifyBook(book)" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">create</i></a>
 					</td>

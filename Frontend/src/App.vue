@@ -3,8 +3,8 @@
   	<div >
       <nav class="nav-extended">
         <div class="nav-wrapper">
-          <i class="fa fa-book" aria-hidden="true"></i>
-          <a href="#" class="brand-logo">Libreta de Contactos</a>
+
+          <a href="#" class="brand-logo"><i class="large material-icons">face</i> Libreta de Contactos</a>
         </div>
       </nav>
   	</div>
